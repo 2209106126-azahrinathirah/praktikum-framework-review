@@ -65,10 +65,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static',
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'praktikum.wsgi.application'
 
@@ -123,6 +125,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Lokasi folder static di proyek
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# Folder yang digunakan saat production (dikumpulkan dari semua apps)
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

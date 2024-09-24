@@ -1,7 +1,15 @@
 {% extends 'homepage/layout.html' %}
+
 {% block title %} Homepage {% endblock %}
+
 {% block content %}
-<div class="hero bg-light p-5 rounded-lg m-3">
-<h1 class="display-4">Selamat Datang di Halaman Depan AIS</h1>
+{% load static %}
+<div class="hero bg-light p-5 rounded-lg m-3 text-center">
+    <h1 class="display-4">Selamat Datang di Halaman Depan AIS</h1>
+</div>
+
+<!-- Wrapper untuk pusatkan gambar -->
+<div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+    <img src="{% static 'image/profil.jpg' %}" alt="Profil" class="img-fluid rounded" style="width: 400px;"> 
 </div>
 {% endblock %}
