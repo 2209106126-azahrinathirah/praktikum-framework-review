@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2024 at 05:12 PM
+-- Generation Time: Oct 01, 2024 at 12:51 PM
 -- Server version: 10.6.19-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,24 +29,29 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ais_students` (
   `id` bigint(20) NOT NULL,
-  `nim` bigint(20) UNSIGNED NOT NULL CHECK (`nim` >= 0)
+  `nim` bigint(20) UNSIGNED NOT NULL CHECK (`nim` >= 0),
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone_number` varchar(13) NOT NULL,
+  `year` int(11) NOT NULL,
+  `teacher_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ais_students`
 --
 
-INSERT INTO `ais_students` (`id`, `nim`) VALUES
-(3, 0),
-(8, 835754086282156293),
-(10, 1701960500133312417),
-(5, 2166749266779851759),
-(2, 2767581353227076987),
-(13, 4272433509268388640),
-(1, 6571829883328512270),
-(15, 7582228974275678088),
-(4, 8836009689819311741),
-(9, 8969439489459856051);
+INSERT INTO `ais_students` (`id`, `nim`, `name`, `email`, `phone_number`, `year`, `teacher_id`) VALUES
+(1, 0, 'About event generation performance. Produce professor clear state next reach. Series maintain rise myself according you build.\nEat it give research save difference vote send. Inside policy unit unit bar nor parent.', 'christinealexander@example.org', '647-790-9440x', 19133, 1),
+(5, 378966423084546083, 'Authority measure audience in official. Store interest camera fight common.\nEffect lead really fact generation.\nPlayer foreign care there keep world trade north. Born ready Mr cultural.', 'grayjerry@example.com', '467.540.1119x', -24990, 9),
+(7, 2252455771040847589, 'Commercial no your. Without cultural subject stay trade. Best tell like walk.\nEmployee always win. Dog painting myself across election.\nCall authority student wide. Couple especially star him smile travel and.', 'spencerjason@example.org', '6444332315', 22843, 6),
+(10, 9079862997974853647, 'Near radio apply model. Five majority put where act listen day walk. Produce deep technology wrong.\nEstablish save national station kid expert trip. Pass sit if raise.\nLet carry note simply argue. Marriage industry perform director laugh trade necessary.', 'sarabrown@example.net', '+1-226-584-89', -7616, 10),
+(11, 3201677822542665687, 'The draw operation send artist look treatment. Provide forget compare. Fear bag rest floor phone. Three mission feel send threat ball three.\nCondition black determine building. Avoid outside about maybe. Experience degree per.', 'michael32@example.org', '349.815.7376x', 12858, 4),
+(12, 1574311932648391297, 'Free large forward make serve effort authority. Include language they door share sense laugh success. Determine color old century cause fall morning picture.', 'joneskeith@example.com', '001-731-533-4', -12538, 2),
+(13, 4784445923645154386, 'Avoid matter some price tough candidate. Election small brother day dark here parent. Marriage notice position rather tend authority.\nRace high send bar too follow. Manager successful put effort position agree.', 'ylewis@example.net', '(611)468-4119', -2799, 10),
+(17, 6094631959173670017, 'Event unit grow animal sense both pretty. Company rich eye themselves accept son.\nReason identify like relate I letter age. Southern church grow wait front financial. Join myself sometimes describe treat especially after.', 'ann72@example.com', '8559466372', -22788, 9),
+(18, 2179048773479066059, 'Similar sometimes laugh church floor. Example clearly story her eight world. Me behind anything determine head.', 'jamesgarcia@example.net', '572.474.2009', -8515, 3),
+(21, 2222, 'aaa', 'aaa@gmail.com', '73733', 22, 1);
 
 -- --------------------------------------------------------
 
@@ -56,24 +61,28 @@ INSERT INTO `ais_students` (`id`, `nim`) VALUES
 
 CREATE TABLE `ais_teachers` (
   `id` bigint(20) NOT NULL,
-  `nip` bigint(20) UNSIGNED NOT NULL CHECK (`nip` >= 0)
+  `nip` bigint(20) UNSIGNED NOT NULL CHECK (`nip` >= 0),
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone_number` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ais_teachers`
 --
 
-INSERT INTO `ais_teachers` (`id`, `nip`) VALUES
-(3, 0),
-(6, 1034677033552264302),
-(10, 2594743514045610494),
-(4, 4695163708755730428),
-(2, 5671563829110070068),
-(1, 6823625405858925043),
-(14, 7078857681934964536),
-(16, 7456311505138309490),
-(13, 8571065755193177192),
-(11, 8824223082652241666);
+INSERT INTO `ais_teachers` (`id`, `nip`, `name`, `email`, `phone_number`) VALUES
+(1, 1215371937928729886, 'Than at early.\nEnvironmental property law might sing develop. Scene away scene public professional. Sometimes ball artist put Democrat everyone voice.', 'samuel49@example.org', '+1-616-413-56'),
+(2, 0, 'Indeed his toward realize. Civil language do into.\nRest church card page between million. Notice girl large really go plan news. Recognize social challenge spend.', 'gouldharry@example.org', '(211)370-8740'),
+(3, 1955339260398655225, 'Half college national draw official two term. Subject nice then cell young second defense his. Study every impact fund agent office lawyer. Draw knowledge budget real condition end always.', 'qbaker@example.com', '001-656-430-3'),
+(4, 2324945895607799762, 'Now ten yet. Discuss election painting then subject. Apply this last main cause.\nBall per short director. Property away six century skin exist health. Whole prove across away.', 'laurasnyder@example.com', '+1-705-439-18'),
+(5, 4767273946017019651, 'Production spring family prepare. Instead oil fine worker. Character serious stand suddenly compare past.\nScience education listen everyone offer indicate image public. Short pull commercial card owner by. Serious much goal.', 'jkelley@example.com', '2248695018'),
+(6, 2345694427357236225, 'Note say meet financial star growth occur. Type stay world company third allow eat. From garden pass head may maintain. Science common her none.\nFear once officer enter half. My involve card sister loss.', 'justinpacheco@example.com', '800.733.9471x'),
+(7, 8200259999498088968, 'Upon center draw music sell.\nAlmost fast idea our strong final event. Bag room moment analysis.\nWindow body part indicate nearly understand. Manage wait speech matter. Include yeah list give sit despite account.', 'bonilladevin@example.net', '998-557-3349'),
+(9, 5986316697645374925, 'Lead among night either model painting story. Half born have gas this interview.\nWithin watch behavior. Change can challenge so whether low.\nFall among national garden style seem. Recent even source visit specific coach.', 'byrdjesse@example.com', '+1-746-844-70'),
+(10, 7669744706790894343, 'Memory relationship miss we team. Sometimes notice matter long return. Learn stand him old much.\nSimple Mrs health thing. Father treatment smile event. Drive see old should.\nFinal again once. Into listen consider husband.', 'uvillarreal@example.org', '+1-232-468-94'),
+(13, 3811621312860171328, 'Ask community respond beyond else around campaign. Pressure wide new shoulder what serve similar.\nWest your job another skin sure.\nHair little describe cut community. Read south single chance party interview world ago.', 'fuentesvanessa@example.net', '900-875-5643x'),
+(14, 123, 'ininama', '123@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -202,6 +211,13 @@ CREATE TABLE `auth_user` (
   `date_joined` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `auth_user`
+--
+
+INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
+(1, 'pbkdf2_sha256$870000$ZkIzAZI6Q8drHpTIsLIXBa$hwk+evfSHsS+AMGWyvsFh1BGng+fv2q1Fudg2GVbjB4=', '2024-09-23 23:54:04.181512', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2024-09-23 23:51:22.113585');
+
 -- --------------------------------------------------------
 
 --
@@ -321,6 +337,13 @@ CREATE TABLE `django_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `django_session`
+--
+
+INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('4nix2hqna039maflxdh8c6tmb8hycbat', '.eJxVjEEOwiAQRe_C2pDOAEPr0r1nIAxDpWpoUtqV8e7apAvd_vfef6kQt7WEreUlTKLOCtTpd-OYHrnuQO6x3mad5rouE-td0Qdt-jpLfl4O9--gxFa-NTk_EtrIg0loBnAYoR89AJMIeTAkgGK7jJaMQco9kzMZEwsypU69P7j2NwE:1ssssW:UomniM6YIwt-rmTw_Gd2KffZ2fq73ETnnDUBnGit2jk', '2024-10-07 23:54:04.197142');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -329,14 +352,19 @@ CREATE TABLE `django_session` (
 --
 ALTER TABLE `ais_students`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nim` (`nim`);
+  ADD UNIQUE KEY `nim` (`nim`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `phone_number` (`phone_number`),
+  ADD KEY `ais_students_teacher_id_35da7560_fk_ais_teachers_id` (`teacher_id`);
 
 --
 -- Indexes for table `ais_teachers`
 --
 ALTER TABLE `ais_teachers`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nip` (`nip`);
+  ADD UNIQUE KEY `nip` (`nip`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `phone_number` (`phone_number`);
 
 --
 -- Indexes for table `ais_users`
@@ -426,13 +454,13 @@ ALTER TABLE `django_session`
 -- AUTO_INCREMENT for table `ais_students`
 --
 ALTER TABLE `ais_students`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `ais_teachers`
 --
 ALTER TABLE `ais_teachers`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `ais_users`
@@ -462,7 +490,7 @@ ALTER TABLE `auth_permission`
 -- AUTO_INCREMENT for table `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `auth_user_groups`
@@ -497,6 +525,12 @@ ALTER TABLE `django_migrations`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `ais_students`
+--
+ALTER TABLE `ais_students`
+  ADD CONSTRAINT `ais_students_teacher_id_35da7560_fk_ais_teachers_id` FOREIGN KEY (`teacher_id`) REFERENCES `ais_teachers` (`id`);
 
 --
 -- Constraints for table `auth_group_permissions`
