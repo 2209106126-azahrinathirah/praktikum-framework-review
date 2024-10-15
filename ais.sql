@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2024 at 12:51 PM
+-- Generation Time: Oct 08, 2024 at 01:54 PM
 -- Server version: 10.6.19-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,8 +42,7 @@ CREATE TABLE `ais_students` (
 --
 
 INSERT INTO `ais_students` (`id`, `nim`, `name`, `email`, `phone_number`, `year`, `teacher_id`) VALUES
-(1, 0, 'About event generation performance. Produce professor clear state next reach. Series maintain rise myself according you build.\nEat it give research save difference vote send. Inside policy unit unit bar nor parent.', 'christinealexander@example.org', '647-790-9440x', 19133, 1),
-(5, 378966423084546083, 'Authority measure audience in official. Store interest camera fight common.\nEffect lead really fact generation.\nPlayer foreign care there keep world trade north. Born ready Mr cultural.', 'grayjerry@example.com', '467.540.1119x', -24990, 9),
+(5, 2209106126, 'ariin', 'arin@example.com', '08888888', 2022, 5),
 (7, 2252455771040847589, 'Commercial no your. Without cultural subject stay trade. Best tell like walk.\nEmployee always win. Dog painting myself across election.\nCall authority student wide. Couple especially star him smile travel and.', 'spencerjason@example.org', '6444332315', 22843, 6),
 (10, 9079862997974853647, 'Near radio apply model. Five majority put where act listen day walk. Produce deep technology wrong.\nEstablish save national station kid expert trip. Pass sit if raise.\nLet carry note simply argue. Marriage industry perform director laugh trade necessary.', 'sarabrown@example.net', '+1-226-584-89', -7616, 10),
 (11, 3201677822542665687, 'The draw operation send artist look treatment. Provide forget compare. Fear bag rest floor phone. Three mission feel send threat ball three.\nCondition black determine building. Avoid outside about maybe. Experience degree per.', 'michael32@example.org', '349.815.7376x', 12858, 4),
@@ -51,7 +50,8 @@ INSERT INTO `ais_students` (`id`, `nim`, `name`, `email`, `phone_number`, `year`
 (13, 4784445923645154386, 'Avoid matter some price tough candidate. Election small brother day dark here parent. Marriage notice position rather tend authority.\nRace high send bar too follow. Manager successful put effort position agree.', 'ylewis@example.net', '(611)468-4119', -2799, 10),
 (17, 6094631959173670017, 'Event unit grow animal sense both pretty. Company rich eye themselves accept son.\nReason identify like relate I letter age. Southern church grow wait front financial. Join myself sometimes describe treat especially after.', 'ann72@example.com', '8559466372', -22788, 9),
 (18, 2179048773479066059, 'Similar sometimes laugh church floor. Example clearly story her eight world. Me behind anything determine head.', 'jamesgarcia@example.net', '572.474.2009', -8515, 3),
-(21, 2222, 'aaa', 'aaa@gmail.com', '73733', 22, 1);
+(21, 22222222, 'zahrina', 'zahrina@gmail.com', '088888888', 2022, 1),
+(25, 238393939, 'zzz', 'zzz@gmail.com', '88888', 2022, 1);
 
 -- --------------------------------------------------------
 
@@ -454,7 +454,7 @@ ALTER TABLE `django_session`
 -- AUTO_INCREMENT for table `ais_students`
 --
 ALTER TABLE `ais_students`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `ais_teachers`
