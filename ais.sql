@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2024 at 01:54 PM
+-- Generation Time: Oct 15, 2024 at 02:44 AM
 -- Server version: 10.6.19-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,7 +42,6 @@ CREATE TABLE `ais_students` (
 --
 
 INSERT INTO `ais_students` (`id`, `nim`, `name`, `email`, `phone_number`, `year`, `teacher_id`) VALUES
-(5, 2209106126, 'ariin', 'arin@example.com', '08888888', 2022, 5),
 (7, 2252455771040847589, 'Commercial no your. Without cultural subject stay trade. Best tell like walk.\nEmployee always win. Dog painting myself across election.\nCall authority student wide. Couple especially star him smile travel and.', 'spencerjason@example.org', '6444332315', 22843, 6),
 (10, 9079862997974853647, 'Near radio apply model. Five majority put where act listen day walk. Produce deep technology wrong.\nEstablish save national station kid expert trip. Pass sit if raise.\nLet carry note simply argue. Marriage industry perform director laugh trade necessary.', 'sarabrown@example.net', '+1-226-584-89', -7616, 10),
 (11, 3201677822542665687, 'The draw operation send artist look treatment. Provide forget compare. Fear bag rest floor phone. Three mission feel send threat ball three.\nCondition black determine building. Avoid outside about maybe. Experience degree per.', 'michael32@example.org', '349.815.7376x', 12858, 4),
@@ -51,7 +50,8 @@ INSERT INTO `ais_students` (`id`, `nim`, `name`, `email`, `phone_number`, `year`
 (17, 6094631959173670017, 'Event unit grow animal sense both pretty. Company rich eye themselves accept son.\nReason identify like relate I letter age. Southern church grow wait front financial. Join myself sometimes describe treat especially after.', 'ann72@example.com', '8559466372', -22788, 9),
 (18, 2179048773479066059, 'Similar sometimes laugh church floor. Example clearly story her eight world. Me behind anything determine head.', 'jamesgarcia@example.net', '572.474.2009', -8515, 3),
 (21, 22222222, 'zahrina', 'zahrina@gmail.com', '088888888', 2022, 1),
-(25, 238393939, 'zzz', 'zzz@gmail.com', '88888', 2022, 1);
+(25, 238393939, 'zzz', 'zzz@gmail.com', '88888', 2022, 1),
+(26, 2209106126, 'arin', 'arin@gmail.com', '1', 2022, 1);
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,8 @@ INSERT INTO `ais_teachers` (`id`, `nip`, `name`, `email`, `phone_number`) VALUES
 (9, 5986316697645374925, 'Lead among night either model painting story. Half born have gas this interview.\nWithin watch behavior. Change can challenge so whether low.\nFall among national garden style seem. Recent even source visit specific coach.', 'byrdjesse@example.com', '+1-746-844-70'),
 (10, 7669744706790894343, 'Memory relationship miss we team. Sometimes notice matter long return. Learn stand him old much.\nSimple Mrs health thing. Father treatment smile event. Drive see old should.\nFinal again once. Into listen consider husband.', 'uvillarreal@example.org', '+1-232-468-94'),
 (13, 3811621312860171328, 'Ask community respond beyond else around campaign. Pressure wide new shoulder what serve similar.\nWest your job another skin sure.\nHair little describe cut community. Read south single chance party interview world ago.', 'fuentesvanessa@example.net', '900-875-5643x'),
-(14, 123, 'ininama', '123@gmail.com', '123');
+(14, 123, 'ininama', '123@gmail.com', '123'),
+(15, 111, 'teacher 1', 'teacher1@gmail.com', '08123');
 
 -- --------------------------------------------------------
 
@@ -111,7 +112,8 @@ INSERT INTO `ais_users` (`id`, `username`, `password`, `role`) VALUES
 (7, 'jonbrown', 'Protect grow teacher year popular she. Manager mean bit interview again.', 2),
 (8, 'welchkatherine', 'Able indeed good simple recently several. Sister work article research.', 2),
 (9, 'lisa33', 'Determine meet bring appear care professor energy. Drug thing grow down early my.', 2),
-(10, 'holly18', 'Beautiful line film marriage she central take wonder. Start professor season high sign meeting any.', 2);
+(10, 'holly18', 'Beautiful line film marriage she central take wonder. Start professor season high sign meeting any.', 2),
+(11, '111', 'pbkdf2_sha256$870000$1kriBAXO4dfOBVaFf2tE5n$nS7ElCxIWoBOr/ZKPCcDLT1PYy6wp456SUuYHUCKT48=', 2);
 
 -- --------------------------------------------------------
 
@@ -124,6 +126,15 @@ CREATE TABLE `auth_group` (
   `name` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `auth_group`
+--
+
+INSERT INTO `auth_group` (`id`, `name`) VALUES
+(1, 'Admin'),
+(3, 'Student'),
+(2, 'Teacher');
+
 -- --------------------------------------------------------
 
 --
@@ -135,6 +146,120 @@ CREATE TABLE `auth_group_permissions` (
   `group_id` int(11) NOT NULL,
   `permission_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `auth_group_permissions`
+--
+
+INSERT INTO `auth_group_permissions` (`id`, `group_id`, `permission_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 1, 5),
+(6, 1, 6),
+(7, 1, 7),
+(8, 1, 8),
+(9, 1, 9),
+(10, 1, 10),
+(11, 1, 11),
+(12, 1, 12),
+(13, 1, 13),
+(14, 1, 14),
+(15, 1, 15),
+(16, 1, 16),
+(17, 1, 17),
+(18, 1, 18),
+(19, 1, 19),
+(20, 1, 20),
+(21, 1, 21),
+(22, 1, 22),
+(23, 1, 23),
+(24, 1, 24),
+(25, 1, 25),
+(26, 1, 26),
+(27, 1, 27),
+(28, 1, 28),
+(29, 1, 29),
+(30, 1, 30),
+(31, 1, 31),
+(32, 1, 32),
+(33, 1, 33),
+(34, 1, 34),
+(35, 1, 35),
+(36, 1, 36),
+(37, 2, 1),
+(38, 2, 2),
+(39, 2, 3),
+(40, 2, 4),
+(41, 2, 5),
+(42, 2, 6),
+(43, 2, 7),
+(44, 2, 8),
+(45, 2, 9),
+(46, 2, 10),
+(47, 2, 11),
+(48, 2, 12),
+(49, 2, 13),
+(50, 2, 14),
+(51, 2, 15),
+(52, 2, 16),
+(53, 2, 17),
+(54, 2, 18),
+(55, 2, 19),
+(56, 2, 20),
+(57, 2, 21),
+(58, 2, 22),
+(59, 2, 23),
+(60, 2, 24),
+(61, 2, 25),
+(62, 2, 26),
+(63, 2, 27),
+(64, 2, 28),
+(65, 2, 29),
+(66, 2, 30),
+(67, 2, 31),
+(68, 2, 32),
+(69, 2, 33),
+(70, 2, 34),
+(71, 2, 35),
+(72, 2, 36),
+(73, 3, 1),
+(74, 3, 2),
+(75, 3, 3),
+(76, 3, 4),
+(77, 3, 5),
+(78, 3, 6),
+(79, 3, 7),
+(80, 3, 8),
+(81, 3, 9),
+(82, 3, 10),
+(83, 3, 11),
+(84, 3, 12),
+(85, 3, 13),
+(86, 3, 14),
+(87, 3, 15),
+(88, 3, 16),
+(89, 3, 17),
+(90, 3, 18),
+(91, 3, 19),
+(92, 3, 20),
+(93, 3, 21),
+(94, 3, 22),
+(95, 3, 23),
+(96, 3, 24),
+(97, 3, 25),
+(98, 3, 26),
+(99, 3, 27),
+(100, 3, 28),
+(101, 3, 29),
+(102, 3, 30),
+(103, 3, 31),
+(104, 3, 32),
+(105, 3, 33),
+(106, 3, 34),
+(107, 3, 35),
+(108, 3, 36);
 
 -- --------------------------------------------------------
 
@@ -216,7 +341,10 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$870000$ZkIzAZI6Q8drHpTIsLIXBa$hwk+evfSHsS+AMGWyvsFh1BGng+fv2q1Fudg2GVbjB4=', '2024-09-23 23:54:04.181512', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2024-09-23 23:51:22.113585');
+(1, 'pbkdf2_sha256$870000$ZkIzAZI6Q8drHpTIsLIXBa$hwk+evfSHsS+AMGWyvsFh1BGng+fv2q1Fudg2GVbjB4=', '2024-09-23 23:54:04.181512', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2024-09-23 23:51:22.113585'),
+(2, 'pbkdf2_sha256$870000$SMvTjVgWOp8sCJ3K97Rmym$hABEeoiFbix9uKs8TDsLh9HwcuZMddIznUg5jvNYBro=', '2024-10-15 00:39:45.408473', 1, 'arin', '', '', 'arin@gmail.com', 1, 1, '2024-10-14 23:51:48.232317'),
+(3, 'pbkdf2_sha256$870000$NX8u4qGFXjw3ws1RH9Uc0l$XZKbjw/P41vCFn3G891S2KF0up+7deQnbGva+1pHXwA=', '2024-10-15 00:39:21.512552', 0, '2209106126', '', '', 'arin@gmail.com', 0, 1, '2024-10-15 00:24:57.540610'),
+(4, 'pbkdf2_sha256$870000$cdkdyIcBrwmX5tFMkKgdqK$PhdhrllM+CzVKiGVpYGqHyW/n71J/wrewZHDCFf8S/w=', '2024-10-15 00:37:36.164901', 0, '111', '', '', 'teacher1@gmail.com', 0, 1, '2024-10-15 00:27:55.897692');
 
 -- --------------------------------------------------------
 
@@ -229,6 +357,14 @@ CREATE TABLE `auth_user_groups` (
   `user_id` int(11) NOT NULL,
   `group_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `auth_user_groups`
+--
+
+INSERT INTO `auth_user_groups` (`id`, `user_id`, `group_id`) VALUES
+(1, 3, 3),
+(2, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -258,6 +394,20 @@ CREATE TABLE `django_admin_log` (
   `content_type_id` int(11) DEFAULT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `django_admin_log`
+--
+
+INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`, `action_flag`, `change_message`, `content_type_id`, `user_id`) VALUES
+(1, '2024-10-14 23:53:53.165335', '1', 'Admin', 1, '[{\"added\": {}}]', 3, 2),
+(2, '2024-10-14 23:54:20.203318', '1', 'Teacher', 2, '[{\"changed\": {\"fields\": [\"Name\"]}}]', 3, 2),
+(3, '2024-10-14 23:54:31.634034', '1', 'Student', 2, '[{\"changed\": {\"fields\": [\"Name\"]}}]', 3, 2),
+(4, '2024-10-14 23:54:37.563363', '1', 'Student', 2, '[]', 3, 2),
+(5, '2024-10-14 23:54:58.144602', '1', 'Admin', 2, '[{\"changed\": {\"fields\": [\"Name\"]}}]', 3, 2),
+(6, '2024-10-14 23:55:11.696049', '2', 'Teacher', 1, '[{\"added\": {}}]', 3, 2),
+(7, '2024-10-14 23:56:14.747735', '3', 'Student', 1, '[{\"added\": {}}]', 3, 2),
+(8, '2024-10-15 00:27:57.571170', '15', 'Teachers object (15)', 1, '[{\"added\": {}}]', 8, 2);
 
 -- --------------------------------------------------------
 
@@ -341,7 +491,8 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('4nix2hqna039maflxdh8c6tmb8hycbat', '.eJxVjEEOwiAQRe_C2pDOAEPr0r1nIAxDpWpoUtqV8e7apAvd_vfef6kQt7WEreUlTKLOCtTpd-OYHrnuQO6x3mad5rouE-td0Qdt-jpLfl4O9--gxFa-NTk_EtrIg0loBnAYoR89AJMIeTAkgGK7jJaMQco9kzMZEwsypU69P7j2NwE:1ssssW:UomniM6YIwt-rmTw_Gd2KffZ2fq73ETnnDUBnGit2jk', '2024-10-07 23:54:04.197142');
+('4nix2hqna039maflxdh8c6tmb8hycbat', '.eJxVjEEOwiAQRe_C2pDOAEPr0r1nIAxDpWpoUtqV8e7apAvd_vfef6kQt7WEreUlTKLOCtTpd-OYHrnuQO6x3mad5rouE-td0Qdt-jpLfl4O9--gxFa-NTk_EtrIg0loBnAYoR89AJMIeTAkgGK7jJaMQco9kzMZEwsypU69P7j2NwE:1ssssW:UomniM6YIwt-rmTw_Gd2KffZ2fq73ETnnDUBnGit2jk', '2024-10-07 23:54:04.197142'),
+('6n1tzsklsqds41wd5dqgau57e8deboto', '.eJxVjEEOwiAQRe_C2hAKFIpL956BDMyMVA0kpV0Z765NutDtf-_9l4iwrSVunZY4ozgLLU6_W4L8oLoDvEO9NZlbXZc5yV2RB-3y2pCel8P9OyjQy7fmkCypEUl55wMbC0oxWR-sHrTDCUJmbVixnkIGII-OrPEeRkDGwYj3B-ZwOEA:1t0VbF:lk3e6k-U93XO9WdSbvdhzg_HollspPHdT-iP4CSz-ds', '2024-10-29 00:39:45.424652');
 
 --
 -- Indexes for dumped tables
@@ -454,31 +605,31 @@ ALTER TABLE `django_session`
 -- AUTO_INCREMENT for table `ais_students`
 --
 ALTER TABLE `ais_students`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `ais_teachers`
 --
 ALTER TABLE `ais_teachers`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `ais_users`
 --
 ALTER TABLE `ais_users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `auth_group`
 --
 ALTER TABLE `auth_group`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `auth_group_permissions`
 --
 ALTER TABLE `auth_group_permissions`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `auth_permission`
@@ -490,13 +641,13 @@ ALTER TABLE `auth_permission`
 -- AUTO_INCREMENT for table `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `auth_user_groups`
 --
 ALTER TABLE `auth_user_groups`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `auth_user_user_permissions`
@@ -508,7 +659,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT for table `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `django_content_type`
